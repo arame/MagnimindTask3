@@ -6,7 +6,9 @@ class gl:
     id = "Id"
     title = "Title"
     body = "Body"
+    body_cos = "Body_Cosine_Similarity"
     bullet_points = 'Bullet_Points'
+    bullet_points_cos = "Bullet_Points_Cosine_Similarity"
     score = "Score"
     title_tokens = "Title_Tokens"
     body_tokens = "Body Tokens"

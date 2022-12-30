@@ -1,6 +1,9 @@
 import seaborn as sns
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud
+import logging, os
+
+save_only = True
 
 def histplot_count(title, df, x):
     p = sns.histplot(data=df, x=x, stat='count')
@@ -17,4 +20,29 @@ def show_word_cloud(text, title):
     plt.imshow(wordcloud, interpolation='bilinear')
     plt.axis("off")
     plt.title(title)
-    plt.show()
+    if save_only:
+        fname = f"wordcloud_{title}.png"
+        output_image(fname)
+    else:
+        plt.show()
+
+def show_word_cloud_frequencies(term_weights, k, in_cluster_id, tag):
+    wc = WordCloud(width=1200, height=800, background_color="white")
+    wordcloud = wc.generate_from_frequencies(term_weights)
+    fig, ax = plt.subplots(figsize=(10, 6), dpi=100)
+    ax.imshow(wordcloud, interpolation='bilinear')
+    ax.axis("off")
+    fig.suptitle(f"Tag: {tag}, K: {k}, Cluster:{in_cluster_id}")
+    if save_only:
+        fname = f"wordcloud_{tag}_kmeans_{k}_cluster_{in_cluster_id}.png"
+        output_image(fname)
+    else:
+        plt.show()
+
+def output_image(fname):
+    img = os.path.join("Images", fname)
+    if os.path.exists(img):
+        os.remove(img)
+    plt.savefig(img)
+    logging.info(f"Saved image: {img}")
+    plt.close()
