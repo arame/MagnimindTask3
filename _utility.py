@@ -3,7 +3,10 @@ class gl:
     pkl_df_selected_jobs = "pkl_df_selected_jobs.pkl"
     pkl_df_not_selected_jobs = "pkl_df_not_selected_jobs.pkl"
     pkl_df_tfidf_jobs = "pkl_df_tfidf_jobs.pkl"
+    pkl_df_tfidf_selected_jobs = "pkl_df_tfidf_selected_jobs.pkl"
+    pkl_df_tfidf_not_selected_jobs = "pkl_df_tfidf_not_selected_jobs.pkl"
     txt_resume = 'resume.txt'
+    tfidf_file = "df_tfidf_jobs.csv"
     # col_names =  ['Id', 'Title', 'Body', 'Bullet_Points', 'Score']
     id = "Id"
     title = "Title"
