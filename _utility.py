@@ -7,7 +7,7 @@ class gl:
     pkl_df_tfidf_not_selected_jobs = "pkl_df_tfidf_not_selected_jobs.pkl"
     txt_resume = 'resume.txt'
     tfidf_file = "df_tfidf_jobs.csv"
-    # col_names =  ['Id', 'Title', 'Body', 'Bullet_Points', 'Score']
+    # column names for jobs dataframe
     id = "Id"
     title = "Title"
     body = "Body"
@@ -15,6 +15,9 @@ class gl:
     bullet_points = 'Bullet_Points'
     bullet_points_cos = "Bullet_Points_Cosine_Similarity"
     score = "Score"
+    # flag for data source
+    from_tfidf_file = False
+    # tokens
     title_tokens = "Title_Tokens"
     body_tokens = "Body Tokens"
     bullet_point_tokens = 'Bullet_Point Tokens'
